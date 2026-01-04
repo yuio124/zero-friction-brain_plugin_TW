@@ -3,7 +3,7 @@
 	"name": "Zero Friction Brain",
 	"version": "1.0.1",
 	"minAppVersion": "1.0.0",
-	"description": "PARA 시스템 자동 분류 + Zettelkasten 아이디어 추출을 Gemini AI로 자동화",
+	"description": "프로젝트 중심 자동 분류 + Zettelkasten 아이디어 추출을 Gemini AI로 자동화",
 	"author": "Zero Friction Brain",
 	"authorUrl": "https://github.com/zero-friction-brain",
 	"isDesktopOnly": false
