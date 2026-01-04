@@ -1,0 +1,126 @@
+/* Zero Friction Brain - 스타일 */
+
+/* ZK 선택 모달 */
+.zk-candidate-list {
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+	margin: 16px 0;
+	max-height: 400px;
+	overflow-y: auto;
+}
+
+.zk-candidate-item {
+	display: flex;
+	gap: 12px;
+	padding: 12px;
+	background: var(--background-secondary);
+	border-radius: 8px;
+}
+
+.zk-candidate-item input[type="checkbox"] {
+	margin-top: 4px;
+}
+
+.zk-candidate-label {
+	flex: 1;
+}
+
+.zk-candidate-label strong {
+	display: block;
+	margin-bottom: 4px;
+}
+
+.zk-candidate-body {
+	margin: 8px 0;
+	color: var(--text-muted);
+	font-size: 0.9em;
+}
+
+.zk-candidate-keywords {
+	color: var(--text-faint);
+}
+
+/* Focus 모달 */
+.focus-list {
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
+	margin: 16px 0;
+}
+
+.focus-item {
+	padding: 16px;
+	background: var(--background-secondary);
+	border-radius: 8px;
+}
+
+.focus-item h3 {
+	margin: 0 0 8px 0;
+	font-size: 1.1em;
+}
+
+.focus-why {
+	margin: 8px 0;
+	color: var(--text-muted);
+}
+
+.focus-action {
+	margin: 8px 0 0 0;
+	color: var(--text-accent);
+	font-weight: 500;
+}
+
+/* 버튼 컨테이너 */
+.modal-button-container {
+	display: flex;
+	justify-content: flex-end;
+	gap: 8px;
+	margin-top: 16px;
+	padding-top: 16px;
+	border-top: 1px solid var(--background-modifier-border);
+}
+
+/* 관련 노트 모달 */
+.related-notes-list {
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+	margin: 16px 0;
+	max-height: 400px;
+	overflow-y: auto;
+}
+
+.related-note-item {
+	display: flex;
+	gap: 12px;
+	padding: 12px;
+	background: var(--background-secondary);
+	border-radius: 8px;
+	align-items: flex-start;
+}
+
+.related-note-item input[type="checkbox"] {
+	margin-top: 4px;
+}
+
+.related-note-label {
+	flex: 1;
+}
+
+.related-note-label strong {
+	display: inline;
+}
+
+.related-note-relevance {
+	color: var(--text-accent);
+	font-size: 0.9em;
+	margin-left: 4px;
+}
+
+.related-note-keywords {
+	display: block;
+	margin-top: 4px;
+	color: var(--text-faint);
+	font-size: 0.85em;
+}
