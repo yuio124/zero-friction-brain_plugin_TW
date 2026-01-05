@@ -408,7 +408,7 @@ created: ${e}
 
 # ${t.title}
 
-<iframe src="${s}" width="100%" height="400" frameborder="0" allowfullscreen></iframe>
+<iframe src="${s}" style="width: 133%; height: 500px; transform: scale(0.75); transform-origin: 0 0; border: none;" allowfullscreen></iframe>
 
 ## \uC694\uC57D
 ${t.summary}
@@ -450,7 +450,7 @@ created: ${e}
 
 # ${t.title}
 ${i}
-<iframe src="${t.url}" width="100%" height="600" frameborder="0"></iframe>
+<iframe src="${t.url}" style="width: 133%; height: 800px; transform: scale(0.75); transform-origin: 0 0; border: none;"></iframe>
 
 ## \uC694\uC57D
 ${t.summary}
