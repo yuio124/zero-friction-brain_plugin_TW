@@ -453,7 +453,7 @@ created: ${e}
 # ${t.title}
 ${n}
 <div style="resize: both; overflow: hidden; width: 100%; height: 600px; border: 1px solid var(--background-modifier-border); border-radius: 4px;">
-<iframe src="${i}" style="width: 133%; height: 133%; transform: scale(0.75); transform-origin: 0 0; border: none;"></iframe>
+<iframe src="${i}" style="width: 133%; height: 133%; transform: scale(0.75); transform-origin: 0 0; border: none; color-scheme: light;"></iframe>
 </div>
 
 ## \uC694\uC57D
