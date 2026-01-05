@@ -408,8 +408,8 @@ created: ${e}
 
 # ${t.title}
 
-<div style="resize: both; overflow: auto; width: 100%; height: 400px; border: 1px solid var(--background-modifier-border); border-radius: 4px;">
-<iframe src="${s}" style="width: 133%; height: 100%; transform: scale(0.75); transform-origin: 0 0; border: none;" allowfullscreen></iframe>
+<div style="resize: both; overflow: hidden; width: 100%; height: 400px; border: 1px solid var(--background-modifier-border); border-radius: 4px;">
+<iframe src="${s}" style="width: 133%; height: 133%; transform: scale(0.75); transform-origin: 0 0; border: none;" allowfullscreen></iframe>
 </div>
 
 ## \uC694\uC57D
@@ -452,8 +452,8 @@ created: ${e}
 
 # ${t.title}
 ${i}
-<div style="resize: both; overflow: auto; width: 100%; height: 600px; border: 1px solid var(--background-modifier-border); border-radius: 4px;">
-<iframe src="${t.url}" style="width: 133%; height: 100%; transform: scale(0.75); transform-origin: 0 0; border: none;"></iframe>
+<div style="resize: both; overflow: hidden; width: 100%; height: 600px; border: 1px solid var(--background-modifier-border); border-radius: 4px;">
+<iframe src="${t.url}" style="width: 133%; height: 133%; transform: scale(0.75); transform-origin: 0 0; border: none;"></iframe>
 </div>
 
 ## \uC694\uC57D
