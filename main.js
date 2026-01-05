@@ -408,7 +408,8 @@ created: ${e}
 
 # ${t.title}
 
-## \uCD9C\uCC98
+## \uC601\uC0C1
+
 ${t.url}
 
 ## \uC694\uC57D
