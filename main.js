@@ -399,7 +399,7 @@ ${s.slice(0,10).map(({note:o})=>{let l=o.path.split("/");return`- [[${l[l.length
 `}}c!=null&&c.relatedTopics&&c.relatedTopics.length>0&&(n+=`
 **\uAD00\uB828 \uC8FC\uC81C:** ${c.relatedTopics.join(", ")}
 `),n+=`
-`}let r=this.app.vault.getAbstractFileByPath(this.indexPath);r instanceof bm.TFile&&await this.app.vault.delete(r),await this.app.vault.create(this.indexPath,n)}};var Pp=class{constructor(t){this.gemini=t}extractVideoId(t){let e=[/(?:youtube\.com\/watch\?v=|youtu\.be\/|youtube\.com\/embed\/|youtube\.com\/v\/)([a-zA-Z0-9_-]{11})/,/^([a-zA-Z0-9_-]{11})$/];for(let s of e){let i=t.match(s);if(i)return i[1]}return null}isValidYouTubeUrl(t){return this.extractVideoId(t)!==null}async processVideo(t){let e=this.extractVideoId(t);if(!e)throw new Error("\uC720\uD6A8\uD55C YouTube URL\uC774 \uC544\uB2D9\uB2C8\uB2E4");let s=`https://www.youtube.com/watch?v=${e}`;console.log("Gemini \uB124\uC774\uD2F0\uBE0C YouTube \uBD84\uC11D \uC2DC\uC791:",s);let i=await this.gemini.analyzeYouTube(s);return{videoId:e,url:s,title:i.title,summary:i.summary,keyPoints:i.keyPoints}}generateMarkdownNote(t){let e=new Date().toISOString();return`---
+`}let r=this.app.vault.getAbstractFileByPath(this.indexPath);r instanceof bm.TFile&&await this.app.vault.delete(r),await this.app.vault.create(this.indexPath,n)}};var Pp=class{constructor(t){this.gemini=t}extractVideoId(t){let e=[/(?:youtube\.com\/watch\?v=|youtu\.be\/|youtube\.com\/embed\/|youtube\.com\/v\/)([a-zA-Z0-9_-]{11})/,/^([a-zA-Z0-9_-]{11})$/];for(let s of e){let i=t.match(s);if(i)return i[1]}return null}isValidYouTubeUrl(t){return this.extractVideoId(t)!==null}async processVideo(t){let e=this.extractVideoId(t);if(!e)throw new Error("\uC720\uD6A8\uD55C YouTube URL\uC774 \uC544\uB2D9\uB2C8\uB2E4");let s=`https://www.youtube.com/watch?v=${e}`;console.log("Gemini \uB124\uC774\uD2F0\uBE0C YouTube \uBD84\uC11D \uC2DC\uC791:",s);let i=await this.gemini.analyzeYouTube(s);return{videoId:e,url:s,title:i.title,summary:i.summary,keyPoints:i.keyPoints}}generateMarkdownNote(t){let e=new Date().toISOString(),s=`https://www.youtube.com/embed/${t.videoId}`;return`---
 type: youtube
 source: "${t.url}"
 title: "${t.title.replace(/"/g,'\\"')}"
@@ -408,15 +408,13 @@ created: ${e}
 
 # ${t.title}
 
-## \uC601\uC0C1
-
-${t.url}
+<iframe src="${s}" width="100%" height="400" frameborder="0" allowfullscreen></iframe>
 
 ## \uC694\uC57D
 ${t.summary}
 
 ## \uD575\uC2EC \uD3EC\uC778\uD2B8
-${t.keyPoints.map(s=>`- ${s}`).join(`
+${t.keyPoints.map(i=>`- ${i}`).join(`
 `)}
 `}};var kp=require("obsidian"),Mp=class{constructor(t){this.gemini=t}isValidUrl(t){try{let e=new URL(t);return e.protocol==="http:"||e.protocol==="https:"}catch(e){return!1}}extractMetadata(t,e){let s=l=>{let c=[new RegExp(`<meta[^>]*property=["']${l}["'][^>]*content=["']([^"']+)["']`,"i"),new RegExp(`<meta[^>]*content=["']([^"']+)["'][^>]*property=["']${l}["']`,"i"),new RegExp(`<meta[^>]*name=["']${l}["'][^>]*content=["']([^"']+)["']`,"i"),new RegExp(`<meta[^>]*content=["']([^"']+)["'][^>]*name=["']${l}["']`,"i")];for(let d of c){let u=t.match(d);if(u)return u[1]}return""},i=t.match(/<title[^>]*>([^<]+)<\/title>/i),n=t.match(/<link[^>]*rel=["'](?:shortcut )?icon["'][^>]*href=["']([^"']+)["']/i),r=new URL(e),o=l=>l?l.startsWith("http")?l:l.startsWith("//")?r.protocol+l:l.startsWith("/")?r.origin+l:r.origin+"/"+l:"";return{title:s("og:title")||s("twitter:title")||(i==null?void 0:i[1])||"",description:s("og:description")||s("twitter:description")||s("description")||"",image:o(s("og:image")||s("twitter:image")||""),siteName:s("og:site_name")||r.hostname,favicon:o((n==null?void 0:n[1])||"/favicon.ico")}}extractContent(t){let e=t.match(/<title[^>]*>([^<]+)<\/title>/i),s=t.match(/<meta[^>]*property=["']og:title["'][^>]*content=["']([^"']+)["']/i),i=(s==null?void 0:s[1])||(e==null?void 0:e[1])||"Untitled",n=t.replace(/<script[^>]*>[\s\S]*?<\/script>/gi,"").replace(/<style[^>]*>[\s\S]*?<\/style>/gi,"").replace(/<!--[\s\S]*?-->/g,"").replace(/<nav[^>]*>[\s\S]*?<\/nav>/gi,"").replace(/<header[^>]*>[\s\S]*?<\/header>/gi,"").replace(/<footer[^>]*>[\s\S]*?<\/footer>/gi,"").replace(/<aside[^>]*>[\s\S]*?<\/aside>/gi,""),r="",o=n.match(/<article[^>]*>([\s\S]*?)<\/article>/i),l=n.match(/<main[^>]*>([\s\S]*?)<\/main>/i),c=n.match(/<div[^>]*(?:class|id)=["'][^"']*content[^"']*["'][^>]*>([\s\S]*?)<\/div>/i);if(o)r=o[1];else if(l)r=l[1];else if(c)r=c[1];else{let u=n.match(/<body[^>]*>([\s\S]*?)<\/body>/i);r=(u==null?void 0:u[1])||n}return r=r.replace(/<\/?(p|div|br|h[1-6]|li|tr)[^>]*>/gi,`
 `).replace(/<[^>]+>/g,"").replace(/&nbsp;/g," ").replace(/&amp;/g,"&").replace(/&lt;/g,"<").replace(/&gt;/g,">").replace(/&quot;/g,'"').replace(/&#39;/g,"'").replace(/&[a-z]+;/gi," ").replace(/\n{3,}/g,`
@@ -452,6 +450,8 @@ created: ${e}
 
 # ${t.title}
 ${i}
+<iframe src="${t.url}" width="100%" height="600" frameborder="0"></iframe>
+
 ## \uC694\uC57D
 ${t.summary}
 
