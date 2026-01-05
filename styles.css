@@ -124,3 +124,40 @@
 	color: var(--text-faint);
 	font-size: 0.85em;
 }
+
+/* 북마크 callout (링크 미리보기) */
+.callout[data-callout="bookmark"] {
+	--callout-color: 120, 120, 120;
+	--callout-icon: lucide-bookmark;
+	background: var(--background-secondary);
+	border-left: 4px solid rgb(var(--callout-color));
+}
+
+.callout[data-callout="bookmark"] .callout-title {
+	color: var(--text-muted);
+	font-size: 0.85em;
+	font-weight: normal;
+}
+
+.callout[data-callout="bookmark"] .callout-content {
+	padding-top: 8px;
+}
+
+.callout[data-callout="bookmark"] .callout-content strong {
+	font-size: 1.1em;
+	display: block;
+	margin-bottom: 8px;
+}
+
+.callout[data-callout="bookmark"] .callout-content img {
+	max-width: 100%;
+	max-height: 200px;
+	border-radius: 4px;
+	margin: 8px 0;
+	object-fit: cover;
+}
+
+.callout[data-callout="bookmark"] .callout-content a {
+	color: var(--text-muted);
+	font-size: 0.85em;
+}
