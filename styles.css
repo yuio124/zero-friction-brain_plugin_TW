@@ -177,6 +177,10 @@
 	margin-bottom: 8px;
 }
 
+.zfb-mini-calendar .month-title {
+	font-weight: 600;
+}
+
 .zfb-mini-calendar .nav-btn {
 	padding: 4px 8px;
 	border: none;
@@ -192,6 +196,24 @@
 	background-color: var(--background-modifier-hover);
 }
 
+/* 요일 헤더 */
+.zfb-mini-calendar .weekday-header {
+	display: grid;
+	grid-template-columns: repeat(7, 1fr);
+	text-align: center;
+	font-size: 11px;
+	color: var(--text-muted);
+	margin-bottom: 4px;
+}
+
+/* 날짜 그리드 */
+.zfb-mini-calendar .date-grid {
+	display: grid;
+	grid-template-columns: repeat(7, 1fr);
+	gap: 2px;
+}
+
+/* 날짜 셀 */
 .zfb-mini-calendar .date-cell {
 	aspect-ratio: 1;
 	display: flex;
@@ -202,10 +224,13 @@
 	border-radius: 6px;
 	transition: background-color 0.15s;
 	position: relative;
+}
+
+.zfb-mini-calendar .date-cell .day-number {
 	font-size: 12px;
 }
 
-.zfb-mini-calendar .date-cell:hover {
+.zfb-mini-calendar .date-cell:not(.today):hover {
 	background-color: var(--background-modifier-hover);
 }
 
@@ -214,11 +239,45 @@
 	color: var(--text-on-accent);
 }
 
+.zfb-mini-calendar .date-cell.empty {
+	cursor: default;
+}
+
+/* 이벤트 도트 */
+.zfb-mini-calendar .event-dots {
+	display: flex;
+	gap: 2px;
+	margin-top: 2px;
+}
+
 .zfb-mini-calendar .event-dot {
 	width: 4px;
 	height: 4px;
 	border-radius: 50%;
 	background-color: var(--interactive-accent);
+}
+
+.zfb-mini-calendar .date-cell.today .event-dot {
+	background-color: var(--text-on-accent);
+}
+
+/* 오늘로 이동 버튼 */
+.zfb-mini-calendar .today-btn-container {
+	margin-top: 12px;
+	text-align: center;
+}
+
+.zfb-mini-calendar .today-btn {
+	padding: 6px 16px;
+	border: 1px solid var(--background-modifier-border);
+	border-radius: 4px;
+	background: var(--background-secondary);
+	cursor: pointer;
+	font-size: 12px;
+}
+
+.zfb-mini-calendar .today-btn:hover {
+	background: var(--background-modifier-hover);
 }
 
 /* 전체화면 캘린더 */
