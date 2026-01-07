@@ -161,3 +161,208 @@
 	color: var(--text-muted);
 	font-size: 0.85em;
 }
+
+/* ==================== 캘린더 뷰 스타일 ==================== */
+
+/* 미니 캘린더 (사이드바) */
+.zfb-mini-calendar {
+	padding: 8px;
+}
+
+.zfb-mini-calendar .mini-calendar-header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 8px 4px;
+	margin-bottom: 8px;
+}
+
+.zfb-mini-calendar .nav-btn {
+	padding: 4px 8px;
+	border: none;
+	background: none;
+	cursor: pointer;
+	font-size: 16px;
+	color: var(--text-muted);
+	border-radius: 4px;
+	transition: background-color 0.15s;
+}
+
+.zfb-mini-calendar .nav-btn:hover {
+	background-color: var(--background-modifier-hover);
+}
+
+.zfb-mini-calendar .date-cell {
+	aspect-ratio: 1;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+	border-radius: 6px;
+	transition: background-color 0.15s;
+	position: relative;
+	font-size: 12px;
+}
+
+.zfb-mini-calendar .date-cell:hover {
+	background-color: var(--background-modifier-hover);
+}
+
+.zfb-mini-calendar .date-cell.today {
+	background-color: var(--interactive-accent);
+	color: var(--text-on-accent);
+}
+
+.zfb-mini-calendar .event-dot {
+	width: 4px;
+	height: 4px;
+	border-radius: 50%;
+	background-color: var(--interactive-accent);
+}
+
+/* 전체화면 캘린더 */
+.zfb-full-calendar {
+	height: 100%;
+	overflow: auto;
+}
+
+.zfb-full-calendar .calendar-container {
+	height: 100%;
+	padding: 16px;
+}
+
+/* FullCalendar 테마 오버라이드 */
+.zfb-full-calendar .fc {
+	--fc-border-color: var(--background-modifier-border);
+	--fc-button-bg-color: var(--interactive-normal);
+	--fc-button-border-color: var(--background-modifier-border);
+	--fc-button-text-color: var(--text-normal);
+	--fc-button-hover-bg-color: var(--interactive-hover);
+	--fc-button-hover-border-color: var(--background-modifier-border-hover);
+	--fc-button-active-bg-color: var(--interactive-accent);
+	--fc-button-active-border-color: var(--interactive-accent);
+	--fc-today-bg-color: var(--background-secondary-alt);
+	--fc-page-bg-color: var(--background-primary);
+	--fc-neutral-bg-color: var(--background-secondary);
+	--fc-list-event-hover-bg-color: var(--background-modifier-hover);
+	--fc-event-border-color: transparent;
+}
+
+.zfb-full-calendar .fc-toolbar-title {
+	font-size: 1.2em;
+	font-weight: 600;
+}
+
+.zfb-full-calendar .fc-button {
+	border-radius: 4px;
+	padding: 6px 12px;
+	font-size: 13px;
+}
+
+.zfb-full-calendar .fc-daygrid-day-number {
+	color: var(--text-normal);
+	padding: 4px 8px;
+}
+
+.zfb-full-calendar .fc-daygrid-day.fc-day-today .fc-daygrid-day-number {
+	background-color: var(--interactive-accent);
+	color: var(--text-on-accent);
+	border-radius: 50%;
+	width: 24px;
+	height: 24px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.zfb-full-calendar .fc-event {
+	border-radius: 4px;
+	padding: 2px 4px;
+	font-size: 12px;
+	cursor: pointer;
+}
+
+.zfb-full-calendar .fc-event:hover {
+	filter: brightness(1.1);
+}
+
+/* 캘린더 일별 모달 */
+.zfb-calendar-day-modal {
+	min-width: 400px;
+}
+
+.zfb-calendar-day-modal .day-modal-header h2 {
+	margin: 0;
+}
+
+.zfb-calendar-day-modal .day-section {
+	margin-bottom: 16px;
+}
+
+.zfb-calendar-day-modal .section-header {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	margin-bottom: 8px;
+	font-weight: 500;
+}
+
+.zfb-calendar-day-modal .event-item {
+	display: flex;
+	align-items: center;
+	padding: 8px 12px;
+	margin-bottom: 4px;
+	border: 1px solid var(--background-modifier-border);
+	border-radius: 6px;
+	cursor: pointer;
+	transition: background-color 0.15s;
+}
+
+.zfb-calendar-day-modal .event-item:hover {
+	background-color: var(--background-modifier-hover);
+}
+
+.zfb-calendar-day-modal .event-indicator {
+	width: 4px;
+	height: 24px;
+	border-radius: 2px;
+	margin-right: 12px;
+}
+
+/* 캘린더 이벤트 모달 */
+.zfb-event-modal {
+	min-width: 450px;
+}
+
+.zfb-event-modal .event-modal-header {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+	margin-bottom: 16px;
+}
+
+.zfb-event-modal .event-modal-header h2 {
+	margin: 0;
+	flex: 1;
+}
+
+.zfb-event-modal .event-details {
+	padding: 16px;
+	background: var(--background-secondary);
+	border-radius: 8px;
+	margin-bottom: 16px;
+}
+
+.zfb-event-modal .detail-row {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	margin-bottom: 8px;
+}
+
+.zfb-event-modal .tags {
+	display: flex;
+	gap: 4px;
+	flex-wrap: wrap;
+}
