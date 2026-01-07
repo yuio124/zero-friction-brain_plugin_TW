@@ -327,12 +327,9 @@
 .zfb-full-calendar .fc-daygrid-day.fc-day-today .fc-daygrid-day-number {
 	background-color: var(--interactive-accent);
 	color: var(--text-on-accent);
-	border-radius: 50%;
-	width: 24px;
-	height: 24px;
-	display: flex;
-	align-items: center;
-	justify-content: center;
+	border-radius: 12px;
+	padding: 2px 8px;
+	white-space: nowrap;
 }
 
 .zfb-full-calendar .fc-event {
