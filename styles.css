@@ -563,6 +563,7 @@
 /* 메시지 내용 (마크다운) */
 .zfb-chatbot .message-content {
 	font-size: 14px;
+	user-select: text;
 }
 
 .zfb-chatbot .message-content p {
