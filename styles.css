@@ -422,3 +422,237 @@
 	gap: 4px;
 	flex-wrap: wrap;
 }
+
+/* ==================== RAG 챗봇 스타일 ==================== */
+
+/* 챗봇 컨테이너 */
+.zfb-chatbot {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	overflow: hidden;
+}
+
+/* 헤더 */
+.zfb-chatbot .chat-header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 8px 12px;
+	border-bottom: 1px solid var(--background-modifier-border);
+	flex-shrink: 0;
+}
+
+.zfb-chatbot .session-selector {
+	flex: 1;
+	margin-right: 8px;
+}
+
+.zfb-chatbot .session-select {
+	width: 100%;
+	padding: 6px 8px;
+	border-radius: 4px;
+	border: 1px solid var(--background-modifier-border);
+	background: var(--background-secondary);
+	color: var(--text-normal);
+	font-size: 13px;
+}
+
+.zfb-chatbot .header-buttons {
+	display: flex;
+	gap: 4px;
+}
+
+.zfb-chatbot .header-btn {
+	padding: 4px 8px;
+	border: none;
+	background: none;
+	cursor: pointer;
+	font-size: 14px;
+	border-radius: 4px;
+	transition: background-color 0.15s;
+}
+
+.zfb-chatbot .header-btn:hover {
+	background-color: var(--background-modifier-hover);
+}
+
+/* 메시지 영역 */
+.zfb-chatbot .chat-messages {
+	flex: 1;
+	overflow-y: auto;
+	padding: 12px;
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+}
+
+/* 빈 상태 */
+.zfb-chatbot .chat-empty {
+	text-align: center;
+	padding: 40px 20px;
+	color: var(--text-muted);
+}
+
+.zfb-chatbot .chat-empty p {
+	margin: 8px 0;
+}
+
+.zfb-chatbot .chat-empty .text-muted {
+	color: var(--text-faint);
+	font-size: 12px;
+}
+
+.zfb-chatbot .chat-empty .warning-text {
+	color: var(--text-warning);
+	font-size: 12px;
+	background: var(--background-modifier-warning);
+	padding: 8px 12px;
+	border-radius: 6px;
+	margin-top: 12px;
+}
+
+/* 메시지 버블 */
+.zfb-chatbot .chat-message {
+	max-width: 90%;
+	padding: 10px 14px;
+	border-radius: 12px;
+	line-height: 1.5;
+}
+
+.zfb-chatbot .chat-message.user {
+	background: var(--interactive-accent);
+	color: var(--text-on-accent);
+	align-self: flex-end;
+	border-bottom-right-radius: 4px;
+}
+
+.zfb-chatbot .chat-message.assistant {
+	background: var(--background-secondary);
+	color: var(--text-normal);
+	align-self: flex-start;
+	border-bottom-left-radius: 4px;
+}
+
+/* 메시지 내용 (마크다운) */
+.zfb-chatbot .message-content {
+	font-size: 14px;
+}
+
+.zfb-chatbot .message-content p {
+	margin: 0 0 8px 0;
+}
+
+.zfb-chatbot .message-content p:last-child {
+	margin-bottom: 0;
+}
+
+.zfb-chatbot .message-content code {
+	background: var(--background-primary-alt);
+	padding: 2px 4px;
+	border-radius: 3px;
+	font-size: 13px;
+}
+
+.zfb-chatbot .message-content pre {
+	background: var(--background-primary-alt);
+	padding: 10px;
+	border-radius: 6px;
+	overflow-x: auto;
+	margin: 8px 0;
+}
+
+.zfb-chatbot .message-content a.internal-link {
+	color: var(--text-accent);
+	text-decoration: none;
+}
+
+.zfb-chatbot .message-content a.internal-link:hover {
+	text-decoration: underline;
+}
+
+/* 참조 노트 */
+.zfb-chatbot .message-refs {
+	margin-top: 8px;
+	padding-top: 8px;
+	border-top: 1px solid var(--background-modifier-border);
+	font-size: 12px;
+	color: var(--text-muted);
+}
+
+.zfb-chatbot .message-refs a {
+	color: var(--text-accent);
+	cursor: pointer;
+}
+
+.zfb-chatbot .message-refs a:hover {
+	text-decoration: underline;
+}
+
+/* 로딩 표시 */
+.zfb-chatbot .chat-message.loading {
+	opacity: 0.7;
+}
+
+.zfb-chatbot .loading-dots {
+	color: var(--text-muted);
+	animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+	0%, 100% { opacity: 0.5; }
+	50% { opacity: 1; }
+}
+
+/* 입력 영역 */
+.zfb-chatbot .chat-input-area {
+	display: flex;
+	gap: 8px;
+	padding: 12px;
+	border-top: 1px solid var(--background-modifier-border);
+	flex-shrink: 0;
+}
+
+.zfb-chatbot .chat-input {
+	flex: 1;
+	padding: 10px 12px;
+	border: 1px solid var(--background-modifier-border);
+	border-radius: 8px;
+	background: var(--background-primary);
+	color: var(--text-normal);
+	font-size: 14px;
+	resize: none;
+	min-height: 20px;
+	max-height: 120px;
+	line-height: 1.4;
+}
+
+.zfb-chatbot .chat-input::placeholder {
+	color: var(--text-faint);
+}
+
+.zfb-chatbot .chat-input:focus {
+	outline: none;
+	border-color: var(--interactive-accent);
+}
+
+.zfb-chatbot .chat-send-btn {
+	padding: 10px 16px;
+	background: var(--interactive-accent);
+	color: var(--text-on-accent);
+	border: none;
+	border-radius: 8px;
+	cursor: pointer;
+	font-weight: 500;
+	transition: background-color 0.15s;
+	align-self: flex-end;
+}
+
+.zfb-chatbot .chat-send-btn:hover {
+	filter: brightness(1.1);
+}
+
+.zfb-chatbot .chat-send-btn:disabled {
+	opacity: 0.5;
+	cursor: not-allowed;
+}
