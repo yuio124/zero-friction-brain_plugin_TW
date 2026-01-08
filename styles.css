@@ -515,7 +515,7 @@
 /* 메시지 버블 */
 .zfb-chatbot .chat-message {
 	max-width: 90%;
-	padding: 10px 14px;
+	padding: 10px 36px 10px 14px;
 	border-radius: 12px;
 	line-height: 1.5;
 	position: relative;
