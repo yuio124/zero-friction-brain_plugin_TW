@@ -756,20 +756,185 @@
     padding: var(--zfb-mobile-padding);
   }
 
-  /* 캘린더 폰트 축소 */
-  .zfb-full-calendar .fc-toolbar-title {
-    font-size: 1em;
+  /* ====== 모바일 캘린더 전면 개선 ====== */
+
+  /* 캘린더 컨테이너 */
+  .zfb-full-calendar .calendar-container {
+    padding: 8px;
   }
 
-  .zfb-full-calendar .fc-button {
-    padding: 4px 8px;
-    font-size: 12px;
-  }
-
-  /* 캘린더 툴바 레이아웃 */
+  /* 툴바 레이아웃 - 깔끔하게 정리 */
   .zfb-full-calendar .fc-toolbar {
-    flex-direction: column;
+    flex-wrap: wrap;
     gap: 8px;
+    margin-bottom: 12px !important;
+  }
+
+  .zfb-full-calendar .fc-toolbar-chunk {
+    display: flex;
+    justify-content: center;
+  }
+
+  /* 제목 (월/연도) */
+  .zfb-full-calendar .fc-toolbar-title {
+    font-size: 1.1em;
+    font-weight: 600;
+    padding: 8px 0;
+  }
+
+  /* 버튼 스타일 - 더 크고 터치하기 좋게 */
+  .zfb-full-calendar .fc-button {
+    padding: 8px 12px;
+    font-size: 13px;
+    border-radius: 8px;
+    min-height: 40px;
+    font-weight: 500;
+  }
+
+  /* 뷰 선택 버튼 그룹 - 간소화 */
+  .zfb-full-calendar .fc-button-group {
+    gap: 2px;
+  }
+
+  /* 오늘 버튼 강조 */
+  .zfb-full-calendar .fc-today-button {
+    background-color: var(--interactive-accent) !important;
+    color: var(--text-on-accent) !important;
+    border: none !important;
+  }
+
+  /* 날짜 셀 - 더 넓은 터치 영역 */
+  .zfb-full-calendar .fc-daygrid-day {
+    min-height: 60px;
+  }
+
+  .zfb-full-calendar .fc-daygrid-day-number {
+    padding: 6px 8px;
+    font-size: 14px;
+    font-weight: 500;
+  }
+
+  /* 오늘 날짜 강조 */
+  .zfb-full-calendar .fc-daygrid-day.fc-day-today .fc-daygrid-day-number {
+    background-color: var(--interactive-accent);
+    color: var(--text-on-accent);
+    border-radius: 50%;
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    margin: 4px;
+  }
+
+  /* 이벤트 표시 - 깔끔하게 */
+  .zfb-full-calendar .fc-event {
+    padding: 4px 6px;
+    margin: 2px 4px;
+    border-radius: 6px;
+    font-size: 11px;
+    font-weight: 500;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  /* 이벤트 더보기 링크 */
+  .zfb-full-calendar .fc-daygrid-more-link {
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--text-accent);
+    padding: 2px 4px;
+  }
+
+  /* 요일 헤더 */
+  .zfb-full-calendar .fc-col-header-cell-cushion {
+    padding: 10px 4px;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--text-muted);
+  }
+
+  /* 테두리 정리 */
+  .zfb-full-calendar .fc-scrollgrid {
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid var(--background-modifier-border) !important;
+  }
+
+  .zfb-full-calendar .fc-scrollgrid td,
+  .zfb-full-calendar .fc-scrollgrid th {
+    border-color: var(--background-modifier-border);
+  }
+
+  /* 리스트 뷰 개선 */
+  .zfb-full-calendar .fc-list {
+    border-radius: 12px;
+    overflow: hidden;
+  }
+
+  .zfb-full-calendar .fc-list-event {
+    padding: 12px;
+  }
+
+  .zfb-full-calendar .fc-list-event-title {
+    font-size: 14px;
+  }
+
+  .zfb-full-calendar .fc-list-day-cushion {
+    padding: 10px 12px;
+    font-weight: 600;
+  }
+
+  /* ====== 모바일 미니 캘린더 개선 ====== */
+
+  .zfb-mini-calendar {
+    padding: 12px;
+  }
+
+  .zfb-mini-calendar .mini-calendar-header {
+    padding: 8px 0 16px;
+  }
+
+  .zfb-mini-calendar .month-title {
+    font-size: 16px;
+    font-weight: 600;
+  }
+
+  .zfb-mini-calendar .nav-btn {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    font-size: 16px;
+  }
+
+  .zfb-mini-calendar .weekday-header span {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--text-muted);
+  }
+
+  .zfb-mini-calendar .date-cell {
+    min-height: 44px;
+    border-radius: 8px;
+    font-size: 14px;
+  }
+
+  .zfb-mini-calendar .date-cell.today {
+    background-color: var(--interactive-accent);
+    color: var(--text-on-accent);
+  }
+
+  .zfb-mini-calendar .event-dot {
+    width: 5px;
+    height: 5px;
+  }
+
+  .zfb-mini-calendar .today-btn {
+    padding: 10px 16px;
+    border-radius: 8px;
+    font-weight: 500;
   }
 
   /* 챗봇 메시지 최대 너비 */
@@ -781,13 +946,6 @@
   .zfb-chatbot .message-content pre {
     max-width: 100%;
     overflow-x: auto;
-  }
-
-  /* 캘린더 이벤트 텍스트 줄임 */
-  .zfb-full-calendar .fc-event {
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
   }
 
   /* 온보딩 4단계 진행 표시 - 모바일 */
