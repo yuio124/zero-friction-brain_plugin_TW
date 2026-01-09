@@ -414,6 +414,11 @@
 
 .zfb-calendar-day-modal .day-modal-header h2 {
 	margin: 0;
+	font-size: 16px;
+}
+
+.zfb-calendar-day-modal .day-modal-header p {
+	font-size: 12px;
 }
 
 .zfb-calendar-day-modal .day-section {
@@ -423,8 +428,9 @@
 .zfb-calendar-day-modal .section-header {
 	display: flex;
 	align-items: center;
-	gap: 8px;
+	gap: 6px;
 	margin-bottom: 8px;
+	font-size: 13px;
 	font-weight: 500;
 }
 
@@ -448,6 +454,26 @@
 	height: 24px;
 	border-radius: 2px;
 	margin-right: 12px;
+	flex-shrink: 0;
+}
+
+.zfb-calendar-day-modal .event-info {
+	flex: 1;
+	min-width: 0;
+	overflow: hidden;
+}
+
+.zfb-calendar-day-modal .event-title {
+	font-size: 13px;
+	font-weight: 500;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.zfb-calendar-day-modal .event-detail {
+	font-size: 11px;
+	color: var(--text-muted);
 }
 
 /* 캘린더 이벤트 모달 */
