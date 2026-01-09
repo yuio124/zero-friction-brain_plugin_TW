@@ -1,7 +1,7 @@
 {
 	"id": "zero-friction-brain",
 	"name": "Zero Friction Brain",
-	"version": "1.3.9",
+	"version": "1.3.10",
 	"minAppVersion": "1.0.0",
 	"description": "프로젝트 중심 자동 분류 + Zettelkasten 아이디어 추출을 Gemini AI로 자동화",
 	"author": "Zero Friction Brain",

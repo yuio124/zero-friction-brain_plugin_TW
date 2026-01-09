@@ -803,14 +803,14 @@
     border: none !important;
   }
 
-  /* 날짜 셀 - 더 넓은 터치 영역 */
+  /* 날짜 셀 - 컴팩트하게 */
   .zfb-full-calendar .fc-daygrid-day {
-    min-height: 60px;
+    min-height: 44px;
   }
 
   .zfb-full-calendar .fc-daygrid-day-number {
-    padding: 6px 8px;
-    font-size: 14px;
+    padding: 4px 6px;
+    font-size: 12px;
     font-weight: 500;
   }
 
@@ -819,13 +819,13 @@
     background-color: var(--interactive-accent);
     color: var(--text-on-accent);
     border-radius: 50%;
-    width: 28px;
-    height: 28px;
+    width: 22px;
+    height: 22px;
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 0;
-    margin: 4px;
+    margin: 2px;
   }
 
   /* 이벤트 표시 - 깔끔하게 */
