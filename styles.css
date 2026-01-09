@@ -401,6 +401,8 @@
 /* 캘린더 일별 모달 */
 .zfb-calendar-day-modal {
 	min-width: 400px;
+	max-width: 90vw;
+	box-sizing: border-box;
 }
 
 .zfb-calendar-day-modal .day-modal-header h2 {
@@ -746,9 +748,17 @@
   /* 모달 최소 너비 제거 */
   .zfb-calendar-day-modal,
   .zfb-event-modal {
-    min-width: unset;
-    width: 95%;
-    max-width: 450px;
+    min-width: unset !important;
+    width: 95% !important;
+    max-width: 450px !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Obsidian 모달 컨테이너 오버라이드 */
+  .modal.zfb-calendar-day-modal-container {
+    width: auto !important;
+    max-width: 90vw !important;
+    min-width: 0 !important;
   }
 
   /* 온보딩 모달 */
@@ -764,19 +774,32 @@
 
 /* 모바일 (480px 이하) */
 @media (max-width: 480px) {
-  /* 모달 컨테이너 - 화면 밖으로 안 나가게 */
-  .zfb-calendar-day-modal-container.modal {
-    width: calc(100vw - 24px) !important;
-    max-width: calc(100vw - 24px) !important;
-    min-width: unset !important;
-    margin: 12px !important;
+  /* 캘린더 일별 모달 - Obsidian 기본 스타일 완전 오버라이드 */
+  .modal.zfb-calendar-day-modal-container {
+    width: calc(100vw - 32px) !important;
+    max-width: calc(100vw - 32px) !important;
+    min-width: 0 !important;
+    left: 16px !important;
+    right: 16px !important;
+    margin: 0 !important;
   }
 
+  .zfb-calendar-day-modal-container .modal-content,
   .zfb-calendar-day-modal {
-    min-width: unset !important;
+    min-width: 0 !important;
     max-width: 100% !important;
-    overflow-x: hidden;
+    width: 100% !important;
+    overflow-x: hidden !important;
+    box-sizing: border-box !important;
+  }
+
+  .zfb-calendar-day-modal .day-modal-header h2 {
+    font-size: 16px;
     word-break: break-word;
+  }
+
+  .zfb-calendar-day-modal .day-modal-sections {
+    max-height: 50vh !important;
   }
 
   .zfb-calendar-day-modal .event-item {
@@ -784,10 +807,16 @@
     overflow: hidden;
   }
 
-  .zfb-calendar-day-modal .event-item .event-title {
+  .zfb-calendar-day-modal .event-info {
+    min-width: 0 !important;
     overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
+  }
+
+  .zfb-calendar-day-modal .event-title {
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    white-space: nowrap !important;
+    max-width: 100% !important;
   }
 
   /* 챗봇 패딩 축소 */
