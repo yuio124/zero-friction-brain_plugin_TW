@@ -398,10 +398,17 @@
 	margin-right: 4px;
 }
 
-/* 캘린더 일별 모달 */
-.zfb-calendar-day-modal {
-	width: min(400px, 90vw);
+/* 캘린더 일별 모달 - modalEl 스타일 */
+.modal.zfb-calendar-day-modal-container {
+	width: 420px;
 	max-width: 90vw;
+	min-width: 0;
+}
+
+/* 캘린더 일별 모달 - contentEl 스타일 */
+.zfb-calendar-day-modal {
+	width: 100%;
+	max-width: 100%;
 	box-sizing: border-box;
 }
 
