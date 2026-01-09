@@ -1168,3 +1168,182 @@
   font-size: 13px;
   color: var(--text-normal);
 }
+
+/* ==================== API 사용량 추적 (v1.3.0) ==================== */
+
+/* 사용량 섹션 컨테이너 */
+.zfb-usage-section {
+  margin: 16px 0;
+  padding: 16px;
+  background: var(--background-secondary);
+  border-radius: 8px;
+  border: 1px solid var(--background-modifier-border);
+}
+
+.zfb-usage-section h4 {
+  margin: 0 0 12px 0;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-normal);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* 통계 그리드 */
+.zfb-usage-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+/* 개별 통계 항목 */
+.zfb-usage-stat-item {
+  display: flex;
+  flex-direction: column;
+  padding: 12px;
+  background: var(--background-primary);
+  border-radius: 6px;
+  border: 1px solid var(--background-modifier-border);
+}
+
+.zfb-usage-stat-item .stat-label {
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-bottom: 4px;
+}
+
+.zfb-usage-stat-item .stat-value {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text-normal);
+  font-variant-numeric: tabular-nums;
+}
+
+.zfb-usage-stat-item .stat-value.cost {
+  color: var(--text-accent);
+}
+
+/* 기능별 호출 수 */
+.zfb-usage-features {
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid var(--background-modifier-border);
+}
+
+.zfb-usage-features h5 {
+  margin: 0 0 8px 0;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-muted);
+}
+
+.zfb-usage-feature-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.zfb-usage-feature-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 8px;
+  background: var(--background-primary);
+  border-radius: 4px;
+  font-size: 12px;
+  border: 1px solid var(--background-modifier-border);
+}
+
+.zfb-usage-feature-item .feature-name {
+  color: var(--text-muted);
+}
+
+.zfb-usage-feature-item .feature-count {
+  font-weight: 600;
+  color: var(--text-normal);
+}
+
+/* 버튼 컨테이너 */
+.zfb-usage-buttons {
+  display: flex;
+  gap: 8px;
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid var(--background-modifier-border);
+}
+
+.zfb-usage-buttons button {
+  flex: 1;
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: 1px solid var(--background-modifier-border);
+  background: var(--background-primary);
+  color: var(--text-normal);
+  cursor: pointer;
+  font-size: 13px;
+  transition: all 0.15s ease;
+}
+
+.zfb-usage-buttons button:hover {
+  background: var(--background-modifier-hover);
+  border-color: var(--background-modifier-border-hover);
+}
+
+.zfb-usage-buttons button.mod-warning {
+  color: var(--text-error);
+  border-color: var(--text-error);
+}
+
+.zfb-usage-buttons button.mod-warning:hover {
+  background: rgba(var(--color-red-rgb), 0.1);
+}
+
+/* 빈 상태 텍스트 */
+.zfb-usage-empty {
+  text-align: center;
+  padding: 24px 16px;
+  color: var(--text-muted);
+  font-size: 13px;
+}
+
+/* 상태바 스타일 */
+.zfb-usage-statusbar {
+  cursor: pointer;
+  padding: 0 8px;
+  transition: background-color 0.15s ease;
+  border-radius: 4px;
+}
+
+.zfb-usage-statusbar:hover {
+  background-color: var(--background-modifier-hover);
+}
+
+/* 모바일 반응형 */
+@media (max-width: 480px) {
+  .zfb-usage-stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .zfb-usage-stat-item .stat-value {
+    font-size: 16px;
+  }
+
+  .zfb-usage-buttons {
+    flex-direction: column;
+  }
+}
+
+/* 터치 디바이스 대응 */
+@media (pointer: coarse) {
+  .zfb-usage-buttons button {
+    min-height: var(--zfb-touch-target-min);
+  }
+
+  .zfb-usage-statusbar {
+    min-height: var(--zfb-touch-target-min);
+    display: flex;
+    align-items: center;
+  }
+}
