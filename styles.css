@@ -400,7 +400,7 @@
 
 /* 캘린더 일별 모달 */
 .zfb-calendar-day-modal {
-	min-width: 400px;
+	width: min(400px, 90vw);
 	max-width: 90vw;
 	box-sizing: border-box;
 }
