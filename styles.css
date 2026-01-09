@@ -942,3 +942,195 @@
 .zfb-full-calendar {
   -webkit-overflow-scrolling: touch;
 }
+
+/* ==================== 온보딩 스타일 ==================== */
+
+.zfb-onboarding {
+  max-width: var(--zfb-onboarding-max-width);
+}
+
+.zfb-onboarding h2 {
+  margin-bottom: 16px;
+  font-size: 1.4em;
+}
+
+.zfb-onboarding p {
+  color: var(--text-muted);
+  margin-bottom: 16px;
+}
+
+.zfb-onboarding a {
+  display: inline-block;
+  margin-bottom: 20px;
+  color: var(--text-accent);
+}
+
+/* 진행 표시 */
+.onboarding-progress {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  margin-bottom: 24px;
+}
+
+.progress-dot {
+  width: var(--zfb-progress-dot-size);
+  height: var(--zfb-progress-dot-size);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--background-secondary);
+  color: var(--text-muted);
+  font-weight: 500;
+  font-size: 14px;
+  transition: all 0.2s ease;
+}
+
+.progress-dot.active {
+  background: var(--interactive-accent);
+  color: var(--text-on-accent);
+  transform: scale(1.1);
+}
+
+.progress-dot.completed {
+  background: var(--text-success);
+  color: white;
+}
+
+/* 폴더 구조 미리보기 */
+.folder-preview {
+  background: var(--background-secondary);
+  padding: 12px 16px;
+  border-radius: 8px;
+  margin: 16px 0;
+  border: 1px solid var(--background-modifier-border);
+}
+
+.folder-preview pre {
+  margin: 0;
+  font-family: var(--font-monospace);
+  font-size: 13px;
+  line-height: 1.6;
+  white-space: pre-wrap;
+}
+
+/* 사용 팁 */
+.tips-container {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 16px 0;
+}
+
+.tips-container .tip {
+  padding: 12px 16px;
+  background: var(--background-secondary);
+  border-radius: 8px;
+  border: 1px solid var(--background-modifier-border);
+}
+
+.tips-container .tip strong {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 14px;
+}
+
+.tips-container .tip p {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 13px;
+}
+
+.tips-container kbd {
+  background: var(--background-primary);
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 12px;
+  border: 1px solid var(--background-modifier-border);
+  font-family: var(--font-monospace);
+}
+
+/* 프리셋 카드 */
+.preset-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 16px 0;
+}
+
+.preset-card {
+  padding: var(--zfb-preset-card-padding);
+  background: var(--background-secondary);
+  border: 2px solid var(--background-modifier-border);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.preset-card:hover {
+  border-color: var(--interactive-accent);
+  background: var(--background-secondary-alt);
+}
+
+.preset-card.selected {
+  border-color: var(--interactive-accent);
+  background: var(--background-modifier-active-hover);
+}
+
+.preset-icon {
+  font-size: 24px;
+  margin-bottom: 8px;
+}
+
+.preset-label {
+  font-weight: 600;
+  font-size: 15px;
+  margin-bottom: 4px;
+}
+
+.preset-desc {
+  font-size: 13px;
+  color: var(--text-muted);
+  white-space: pre-line;
+  line-height: 1.5;
+}
+
+/* 온보딩 모달 버튼 컨테이너 */
+.zfb-onboarding .modal-button-container {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 24px;
+  padding-top: 16px;
+  border-top: 1px solid var(--background-modifier-border);
+}
+
+/* 모바일 온보딩 반응형 */
+@media (max-width: 480px) {
+  .zfb-onboarding {
+    max-width: 100%;
+  }
+
+  .onboarding-progress {
+    gap: 16px;
+  }
+
+  .progress-dot {
+    width: 28px;
+    height: 28px;
+    font-size: 12px;
+  }
+
+  .preset-cards {
+    gap: 8px;
+  }
+
+  .preset-card {
+    padding: 12px;
+  }
+
+  .preset-icon {
+    font-size: 20px;
+  }
+}
