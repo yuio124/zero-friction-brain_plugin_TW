@@ -911,6 +911,30 @@
     font-weight: 600;
   }
 
+  /* 주간/일간 뷰 시간 축 폰트 축소 */
+  .zfb-full-calendar .fc-timegrid-slot-label {
+    font-size: 10px;
+  }
+
+  .zfb-full-calendar .fc-timegrid-axis-cushion {
+    font-size: 10px;
+    padding: 2px 4px;
+  }
+
+  /* 주간/일간 뷰 이벤트 폰트 축소 */
+  .zfb-full-calendar .fc-timegrid-event {
+    font-size: 10px;
+    padding: 2px;
+  }
+
+  .zfb-full-calendar .fc-timegrid-event .fc-event-time {
+    font-size: 9px;
+  }
+
+  .zfb-full-calendar .fc-timegrid-event .fc-event-title {
+    font-size: 10px;
+  }
+
   /* ====== 모바일 미니 캘린더 개선 ====== */
 
   .zfb-mini-calendar {
