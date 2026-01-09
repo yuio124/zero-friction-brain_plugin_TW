@@ -1134,3 +1134,37 @@
     font-size: 20px;
   }
 }
+
+/* ==================== 설정 페이지 프리셋 설명 ==================== */
+
+.zfb-preset-description {
+  margin: 16px 0;
+  padding: 16px;
+  background: var(--background-secondary);
+  border-radius: 8px;
+  border: 1px solid var(--background-modifier-border);
+}
+
+.zfb-preset-description .preset-desc-content strong {
+  font-size: 15px;
+  display: block;
+  margin-bottom: 12px;
+}
+
+.zfb-preset-description .preset-details p {
+  margin: 0 0 8px 0;
+  color: var(--text-muted);
+  font-size: 13px;
+}
+
+.zfb-preset-description .preset-details ul {
+  margin: 0;
+  padding-left: 20px;
+  list-style: none;
+}
+
+.zfb-preset-description .preset-details li {
+  margin: 4px 0;
+  font-size: 13px;
+  color: var(--text-normal);
+}
