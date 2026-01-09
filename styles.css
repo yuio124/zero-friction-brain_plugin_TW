@@ -374,6 +374,30 @@
 	filter: brightness(1.1);
 }
 
+/* 시간 이벤트 (dot-event) 블록 스타일로 표시 */
+.zfb-full-calendar .fc-daygrid-dot-event {
+	display: flex;
+	align-items: center;
+	padding: 2px 4px;
+	border-radius: 4px;
+	background-color: inherit;
+}
+
+.zfb-full-calendar .fc-daygrid-dot-event .fc-daygrid-event-dot {
+	display: none;
+}
+
+.zfb-full-calendar .fc-daygrid-dot-event .fc-event-time,
+.zfb-full-calendar .fc-daygrid-dot-event .fc-event-title {
+	color: white;
+	font-size: 12px;
+}
+
+.zfb-full-calendar .fc-daygrid-dot-event .fc-event-time {
+	font-weight: 600;
+	margin-right: 4px;
+}
+
 /* 캘린더 일별 모달 */
 .zfb-calendar-day-modal {
 	min-width: 400px;
