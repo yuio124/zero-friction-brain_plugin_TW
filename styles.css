@@ -1,5 +1,36 @@
 /* Zero Friction Brain - 스타일 */
 
+/* ==================== 공유 CSS 변수 ==================== */
+:root {
+  /* ===== 모바일 UI (작업 0) ===== */
+  /* 터치 영역 크기 */
+  --zfb-touch-target-min: 44px;      /* iOS HIG 권장 */
+  --zfb-touch-target-large: 48px;    /* Material Design 권장 */
+  --zfb-checkbox-size: 20px;         /* 터치 친화적 체크박스 */
+
+  /* 모바일 패딩 */
+  --zfb-mobile-padding: 8px;
+  --zfb-mobile-padding-large: 12px;
+
+  /* iOS 자동 확대 방지 폰트 크기 */
+  --zfb-ios-input-font: 16px;
+
+  /* ===== 온보딩 (작업 1) ===== */
+  --zfb-onboarding-max-width: 500px;
+  --zfb-progress-dot-size: 32px;
+  --zfb-progress-dot-size-mobile: 28px;
+  --zfb-progress-dot-gap: 24px;
+  --zfb-progress-dot-gap-mobile: 16px;
+
+  /* ===== 프리셋 (작업 2) ===== */
+  --zfb-preset-card-padding: 16px;
+  --zfb-preset-card-padding-mobile: 14px;
+
+  /* ===== 템플릿 (작업 5) ===== */
+  --zfb-template-textarea-height: 300px;
+  --zfb-template-textarea-height-mobile: 200px;
+}
+
 /* ZK 선택 모달 */
 .zk-candidate-list {
 	display: flex;
@@ -682,4 +713,232 @@
 .zfb-chatbot .chat-send-btn:disabled {
 	opacity: 0.5;
 	cursor: not-allowed;
+}
+
+/* ==================== 모바일 반응형 ==================== */
+
+/* 태블릿 (768px 이하) */
+@media (max-width: 768px) {
+  /* 모달 최소 너비 제거 */
+  .zfb-calendar-day-modal,
+  .zfb-event-modal {
+    min-width: unset;
+    width: 95%;
+    max-width: 450px;
+  }
+
+  /* 온보딩 모달 */
+  .zfb-onboarding {
+    max-width: 95%;
+  }
+
+  /* 온보딩 4단계 진행 표시 - 태블릿 */
+  .onboarding-progress {
+    gap: 20px;
+  }
+}
+
+/* 모바일 (480px 이하) */
+@media (max-width: 480px) {
+  /* 모달 전체 너비 */
+  .zfb-calendar-day-modal,
+  .zfb-event-modal {
+    width: 100%;
+    margin: 0;
+  }
+
+  /* 챗봇 패딩 축소 */
+  .zfb-chatbot .chat-messages {
+    padding: var(--zfb-mobile-padding);
+  }
+
+  .zfb-chatbot .chat-input-area {
+    padding: var(--zfb-mobile-padding);
+  }
+
+  /* 캘린더 폰트 축소 */
+  .zfb-full-calendar .fc-toolbar-title {
+    font-size: 1em;
+  }
+
+  .zfb-full-calendar .fc-button {
+    padding: 4px 8px;
+    font-size: 12px;
+  }
+
+  /* 캘린더 툴바 레이아웃 */
+  .zfb-full-calendar .fc-toolbar {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  /* 챗봇 메시지 최대 너비 */
+  .zfb-chatbot .chat-message {
+    max-width: 95%;
+  }
+
+  /* 코드 블록 가로 스크롤 */
+  .zfb-chatbot .message-content pre {
+    max-width: 100%;
+    overflow-x: auto;
+  }
+
+  /* 캘린더 이벤트 텍스트 줄임 */
+  .zfb-full-calendar .fc-event {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  /* 온보딩 4단계 진행 표시 - 모바일 */
+  .zfb-onboarding {
+    max-width: 100%;
+    padding: 12px;
+  }
+
+  .onboarding-progress {
+    gap: 16px;
+  }
+
+  .progress-dot {
+    width: 28px;
+    height: 28px;
+    font-size: 12px;
+  }
+
+  /* 온보딩 프리셋 카드 - 모바일 */
+  .preset-cards {
+    gap: 10px;
+  }
+
+  .preset-card {
+    padding: 14px;
+  }
+
+  .preset-icon {
+    font-size: 20px;
+  }
+
+  .preset-label {
+    font-size: 14px;
+  }
+
+  .preset-desc {
+    font-size: 12px;
+  }
+
+  /* 온보딩 팁 카드 - 모바일 */
+  .tips-container .tip {
+    padding: 10px 12px;
+  }
+}
+
+/* ==================== 터치 디바이스 대응 ==================== */
+
+@media (pointer: coarse) {
+  /* 챗봇 전송 버튼 */
+  .zfb-chatbot .chat-send-btn {
+    min-height: var(--zfb-touch-target-min);
+    min-width: var(--zfb-touch-target-min);
+    padding: var(--zfb-mobile-padding-large) 20px;
+  }
+
+  /* 챗봇 헤더 버튼 */
+  .zfb-chatbot .header-btn {
+    min-height: var(--zfb-touch-target-min);
+    min-width: var(--zfb-touch-target-min);
+    padding: 10px;
+  }
+
+  /* 메시지 복사 버튼 (작은 버튼은 36px 허용) */
+  .zfb-chatbot .message-copy-btn {
+    min-height: 36px;
+    min-width: 36px;
+    padding: 6px 10px;
+  }
+
+  /* 미니 캘린더 날짜 셀 */
+  .zfb-mini-calendar .date-cell {
+    min-height: var(--zfb-touch-target-min);
+  }
+
+  /* 캘린더 모달 이벤트 아이템 */
+  .zfb-calendar-day-modal .event-item {
+    min-height: var(--zfb-touch-target-large);
+    padding: var(--zfb-mobile-padding-large) 16px;
+  }
+
+  /* 모달 버튼 */
+  .modal-button-container button {
+    min-height: var(--zfb-touch-target-min);
+    padding: 10px 16px;
+  }
+
+  /* 관련 노트/ZK 체크박스 영역 */
+  .related-note-item,
+  .zk-candidate-item {
+    padding: 16px;
+  }
+
+  /* 관련 노트 체크박스 */
+  .related-note-item input[type="checkbox"],
+  .zk-candidate-item input[type="checkbox"] {
+    width: var(--zfb-checkbox-size);
+    height: var(--zfb-checkbox-size);
+  }
+
+  /* 세션 선택 드롭다운 */
+  .zfb-chatbot .session-select {
+    min-height: var(--zfb-touch-target-min);
+    font-size: var(--zfb-ios-input-font); /* iOS 자동 확대 방지 */
+  }
+
+  /* 채팅 입력창 */
+  .zfb-chatbot .chat-input {
+    font-size: var(--zfb-ios-input-font); /* iOS 자동 확대 방지 */
+    min-height: var(--zfb-touch-target-min);
+  }
+
+  /* 터치 피드백 */
+  .zfb-chatbot .chat-send-btn:active,
+  .zfb-chatbot .header-btn:active {
+    transform: scale(0.95);
+  }
+
+  .zfb-mini-calendar .date-cell:active:not(.empty) {
+    background-color: var(--background-modifier-active-hover);
+  }
+}
+
+/* ==================== 모바일 키보드/안전 영역 대응 ==================== */
+
+/* 동적 뷰포트 높이 (가상 키보드 대응) */
+@supports (height: 100dvh) {
+  .zfb-chatbot {
+    height: 100dvh;
+  }
+}
+
+/* iOS Safari 안전 영역 */
+@supports (padding-bottom: env(safe-area-inset-bottom)) {
+  .zfb-chatbot .chat-input-area {
+    padding-bottom: calc(var(--zfb-mobile-padding-large) + env(safe-area-inset-bottom));
+  }
+
+  /* 모달 하단 안전 영역 */
+  .modal-button-container {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+}
+
+/* ==================== 스크롤/터치 개선 ==================== */
+
+/* 터치 스크롤 개선 */
+.zfb-chatbot .chat-messages {
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior: contain;
+}
+
+.zfb-full-calendar {
+  -webkit-overflow-scrolling: touch;
 }
