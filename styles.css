@@ -2166,3 +2166,171 @@
     align-items: center;
   }
 }
+
+/* ==================== 스마트 검색 모달 (v1.3.48) ==================== */
+
+.zfb-smart-search-modal {
+  width: 500px;
+  max-width: 90vw;
+}
+
+.smart-search-header {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: var(--text-normal);
+}
+
+.smart-search-input-container {
+  margin-bottom: 16px;
+}
+
+.smart-search-input {
+  width: 100%;
+  padding: 12px 14px;
+  font-size: 15px;
+  border: 1px solid var(--background-modifier-border);
+  border-radius: 8px;
+  background: var(--background-primary);
+  color: var(--text-normal);
+  outline: none;
+  transition: border-color 0.15s ease;
+}
+
+.smart-search-input:focus {
+  border-color: var(--interactive-accent);
+}
+
+.smart-search-input::placeholder {
+  color: var(--text-faint);
+}
+
+.smart-search-results {
+  max-height: 400px;
+  overflow-y: auto;
+  border-radius: 8px;
+  background: var(--background-secondary);
+  border: 1px solid var(--background-modifier-border);
+}
+
+.smart-search-item {
+  padding: 12px 14px;
+  cursor: pointer;
+  border-bottom: 1px solid var(--background-modifier-border);
+  transition: background-color 0.1s ease;
+}
+
+.smart-search-item:last-child {
+  border-bottom: none;
+}
+
+.smart-search-item:hover,
+.smart-search-item.is-selected {
+  background: var(--background-modifier-hover);
+}
+
+.smart-search-item.is-selected {
+  background: var(--interactive-accent);
+  color: var(--text-on-accent);
+}
+
+.smart-search-item.is-selected .search-item-folder,
+.smart-search-item.is-selected .search-item-similarity {
+  color: var(--text-on-accent);
+  opacity: 0.8;
+}
+
+.search-item-title-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.search-item-icon {
+  flex-shrink: 0;
+}
+
+.search-item-title {
+  flex: 1;
+  font-weight: 500;
+  font-size: 14px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.search-item-similarity {
+  flex-shrink: 0;
+  font-size: 12px;
+  color: var(--text-muted);
+  background: var(--background-primary);
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+.smart-search-item.is-selected .search-item-similarity {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.search-item-folder {
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-top: 4px;
+  padding-left: 22px;
+}
+
+/* 빈 상태, 검색 중, 결과 없음, 오류 */
+.smart-search-empty,
+.smart-search-searching,
+.smart-search-no-results,
+.smart-search-error {
+  padding: 32px 16px;
+  text-align: center;
+  color: var(--text-muted);
+}
+
+.smart-search-empty p,
+.smart-search-searching p,
+.smart-search-no-results p,
+.smart-search-error p {
+  margin: 0 0 8px 0;
+  font-size: 14px;
+}
+
+.smart-search-empty small,
+.smart-search-no-results small,
+.smart-search-error small {
+  font-size: 12px;
+  color: var(--text-faint);
+}
+
+.smart-search-error {
+  color: var(--text-error);
+}
+
+/* 모바일 반응형 */
+@media (max-width: 480px) {
+  .zfb-smart-search-modal {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .smart-search-input {
+    font-size: 16px; /* iOS 자동 확대 방지 */
+  }
+
+  .smart-search-results {
+    max-height: 60vh;
+  }
+
+  .smart-search-item {
+    padding: 14px;
+  }
+}
+
+/* 터치 디바이스 */
+@media (pointer: coarse) {
+  .smart-search-item {
+    min-height: var(--zfb-touch-target-min);
+  }
+}
