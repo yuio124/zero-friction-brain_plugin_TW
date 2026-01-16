@@ -2291,6 +2291,24 @@
   padding-left: 22px;
 }
 
+/* 청크 미리보기 (v1.3.50) */
+.search-item-chunk-preview {
+  font-size: 11px;
+  color: var(--text-muted);
+  margin-top: 4px;
+  padding-left: 22px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 400px;
+  font-style: italic;
+}
+
+.smart-search-item.is-selected .search-item-chunk-preview {
+  color: var(--text-on-accent);
+  opacity: 0.85;
+}
+
 /* 빈 상태, 검색 중, 결과 없음, 오류 */
 .smart-search-empty,
 .smart-search-searching,
