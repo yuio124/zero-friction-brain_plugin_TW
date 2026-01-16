@@ -2268,8 +2268,20 @@
   border-radius: 4px;
 }
 
-.smart-search-item.is-selected .search-item-similarity {
+.search-item-match-type {
+  flex-shrink: 0;
+  font-size: 11px;
+  color: var(--text-accent);
+  background: var(--background-secondary);
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-weight: 500;
+}
+
+.smart-search-item.is-selected .search-item-similarity,
+.smart-search-item.is-selected .search-item-match-type {
   background: rgba(255, 255, 255, 0.2);
+  color: var(--text-on-accent);
 }
 
 .search-item-folder {
